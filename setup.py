@@ -24,17 +24,6 @@ setup(
                 'cxx': [],
                 'nvcc': NVCC_ARGS
             }),
-        CUDAExtension(
-            'carafe_naive_ext', [
-                'carafe/src/cuda/carafe_naive_cuda.cpp',
-                'carafe/src/cuda/carafe_naive_cuda_kernel.cu',
-                'carafe/src/carafe_naive_ext.cpp'
-            ],
-            define_macros=[('WITH_CUDA', None)],
-            extra_compile_args={
-                'cxx': [],
-                'nvcc': NVCC_ARGS
-            })
     ],
     packages=find_packages(exclude=('test', )),
     cmdclass={'build_ext': BuildExtension},
